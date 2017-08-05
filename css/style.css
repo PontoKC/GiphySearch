@@ -1,0 +1,10 @@
+button {
+	padding: 8px;
+	margin: 8px;
+}
+
+.displayedGif {
+	display: inline-block;
+	margin: 20px;
+}
+
