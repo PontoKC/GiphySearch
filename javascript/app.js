@@ -5,9 +5,9 @@ $( document ).ready(function() {
 function displayGif() {
 
         var addedGifCategory = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + addedGifCategory + "&api_key=f8c172b6f47d4631b1da11f7628b7d25&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + addedGifCategory + "&api_key=f8c172b6f47d4631b1da11f7628b7d25&limit=10";
 
-        $("#gifbucket").empty();  
+        $("#gifbucket").empty();
 
         // Creating an AJAX call for the specific topic button being clicked
         $.ajax({
@@ -36,7 +36,7 @@ function displayGif() {
           var animatedUrl = response.data[i].images.fixed_height_small.url;
 
           var image = $("<img class=picture animated-gif=" + animatedUrl + " still-gif=" + stillUrl + " data-state=still>").attr("src", stillUrl);
- 
+
           // // Appending the image
           gifDiv.append(image);
 
@@ -66,13 +66,13 @@ function displayGif() {
           newButton.text(topics[i]);
           // Adding the button to the buttonbucket div
           $("#buttonbucket").append(newButton);
-         
+
         }
       }
 
       // This function handles events where one button is clicked
       $("#addgif").on("click", function(event) {
-        
+
         event.preventDefault();
 
         // This line will grab the text from the input box
